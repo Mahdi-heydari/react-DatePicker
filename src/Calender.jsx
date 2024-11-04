@@ -32,14 +32,14 @@ function DateRangePicker() {
 
   return (
     <div className="flex flex-col items-center gap-20 p-5">
-      <div className="flex gap-10">
-        <h1>
+      <div className="flex gap-10 items-center">
+        <h1 className="font-medium">
           {startDate && endDate ? `${endDate.diff(startDate, "days")} Days you
           Selected` : `you selected ${startDate ? dateType === "gregorian"
           ? moment(startDate).format("YYYY-M-D")
           : moment(startDate).format("jYYYY-jMM-jDD") : 0} `} 
         </h1>
-        <button onClick={handelToggleDateType}>change</button>
+        <button className="text-md  py-1 px-3 bg-blue-500 text-white rounded-md hover:bg-blue-400" onClick={handelToggleDateType}>change</button>
       </div>
       <div className="flex gap-52">
         <div className="flex flex-col gap-3">

@@ -34,8 +34,10 @@ function DateRangePicker() {
     <div className="flex flex-col items-center gap-20 p-5">
       <div className="flex gap-10">
         <h1>
-          {startDate && endDate && endDate.diff(startDate, "days")} Days you
-          Selected
+          {startDate && endDate ? `${endDate.diff(startDate, "days")} Days you
+          Selected` : `you selected ${startDate ? dateType === "gregorian"
+          ? moment(startDate).format("YYYY-M-D")
+          : moment(startDate).format("jYYYY-jMM-jDD") : 0} `} 
         </h1>
         <button onClick={handelToggleDateType}>change</button>
       </div>
